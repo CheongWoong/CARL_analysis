@@ -65,3 +65,49 @@ class Args:
     """whether to use the groundtruth context or not"""
     context_hidden_dim: int = 10
     """the dimension for context hidden vector"""
+
+
+@dataclass
+class TestArgs:
+    exp_name: str = ""
+    """the name of this experiment"""
+    seed: int = 101
+    """seed of the experiment"""
+    torch_deterministic: bool = True
+    """if toggled, `torch.backends.cudnn.deterministic=False`"""
+    cuda: bool = True
+    """if toggled, cuda will be enabled by default"""
+    track: bool = False
+    """if toggled, this experiment will be tracked with Weights and Biases"""
+    wandb_project_name: str = "cleanRL"
+    """the wandb's project name"""
+    wandb_entity: str = None
+    """the entity (team) of wandb's project"""
+    capture_video: bool = False
+    """whether to capture videos of the agent performances (check out `videos` folder)"""
+
+    # Algorithm specific arguments
+    env_id: str = "CARLPendulum"
+    """the id of the environment"""
+    total_episodes: int = 100
+    """the number of episodes for evaluation"""
+
+    # Additional arguments
+    checkpoint_dir: str = ""
+    """the directory for the checkpoint"""
+    device_id: int = 0
+    """the gpu id"""
+    env_config_id: str = "train"
+    """the id for context config (default, train, test)"""
+    n_contexts: int = 0
+    """the number of contexts to be sampled"""
+    test_single_context_id: int = -1
+    """the id for choosing a single context for test (not used when set to -1)"""
+    len_history: int = 0
+    """the length of history for context encoder input"""
+    context_objective: str = "none"
+    """the training objective for context encoder (e.g. none, osi, dm, ...)"""
+    use_gt_context: bool = False
+    """whether to use the groundtruth context or not"""
+    context_hidden_dim: int = 10
+    """the dimension for context hidden vector"""
