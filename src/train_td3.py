@@ -44,11 +44,6 @@ if __name__ == "__main__":
             monitor_gym=True,
             save_code=True,
         )
-    writer = SummaryWriter(f"runs/{run_name}")
-    writer.add_text(
-        "hyperparameters",
-        "|param|value|\n|-|-|\n%s" % ("\n".join([f"|{key}|{value}|" for key, value in vars(args).items()])),
-    )
 
     # TRY NOT TO MODIFY: seeding
     random.seed(args.seed)
@@ -61,6 +56,9 @@ if __name__ == "__main__":
     # env setup
     if "CARL" in args.env_id:
         env_config = OmegaConf.load(f"configs/env_configs/{args.env_id}.yaml")
+        override_args = env_config.get("override_args", None)
+        if override_args is not None:
+            vars(args).update(override_args)
         env_config = env_config.get(args.env_config_id, None)
         if env_config is None:
             assert args.env_config_id == "default" and args.n_contexts == 0
@@ -99,6 +97,13 @@ if __name__ == "__main__":
         device,
         handle_timeout_termination=False,
     )
+
+    writer = SummaryWriter(f"runs/{run_name}")
+    writer.add_text(
+        "hyperparameters",
+        "|param|value|\n|-|-|\n%s" % ("\n".join([f"|{key}|{value}|" for key, value in vars(args).items()])),
+    )
+
     start_time = time.time()
 
     # TRY NOT TO MODIFY: start the game

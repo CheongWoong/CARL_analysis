@@ -1,3 +1,8 @@
+override_args:
+  total_timesteps: 50000
+  buffer_size: 50000
+  learning_starts: 10000
+
 train:
   l:
     context_space_type: categorical
