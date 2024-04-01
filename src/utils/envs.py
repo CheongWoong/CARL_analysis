@@ -49,8 +49,8 @@ def make_carl_env(env_id, seed, idx, capture_video, run_name, context_configs, n
             )
             contexts = context_sampler.sample_contexts(n_contexts=n_contexts)
 
-        print("Training contexts are (showing up to 10):")
-        print(list(contexts.items())[:10])
+            print("Training contexts are (showing up to 10):")
+            print(list(contexts.items())[:10])
 
         if capture_video and idx == 0:
             env = gym.make(f"carl/{env_id}-v0", render_mode="rgb_array", contexts=contexts, obs_context_features=obs_context_features, obs_context_as_dict=False, disable_env_checker=True)
