@@ -30,7 +30,7 @@ if __name__ == "__main__":
         )
 
     args = tyro.cli(Args)
-    run_name = f"training/seed_{args.seed}/{args.env_id}_{args.env_config_id}/{args.exp_name}"
+    run_name = f"training/seed_{args.seed}/{args.env_id}/{args.env_config_id}/{args.exp_name}"
     os.makedirs(f"runs/{run_name}/checkpoints", exist_ok=True)
     if args.track:
         import wandb
@@ -144,7 +144,7 @@ if __name__ == "__main__":
         # ALGO LOGIC: training.
         if global_step > args.learning_starts:
             data = rb.sample(args.batch_size)
-            writer_info = agent.train(data, global_step)
+            writer_info = agent.learn(data, global_step)
 
             if global_step % 100 == 0:
                 for key, value in writer_info.items():

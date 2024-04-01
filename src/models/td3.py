@@ -106,14 +106,15 @@ class TD3(nn.Module):
         self.qf1_target.load_state_dict(self.qf1.state_dict())
         self.qf2_target.load_state_dict(self.qf2.state_dict())
 
-        self.q_optimizer = optim.Adam(list(self.qf1.parameters()) + list(self.qf2.parameters()), lr=args.learning_rate)
-        self.actor_optimizer = optim.Adam(list(self.actor.parameters()), lr=args.learning_rate)
-        if len(self.context_encoder_params) > 0:
-            self.context_optimizer = optim.Adam(self.context_encoder_params, lr=args.learning_rate)
-        else:
-            self.context_optimizer = None
+        if hasattr(args, "learning_rate"):
+            self.q_optimizer = optim.Adam(list(self.qf1.parameters()) + list(self.qf2.parameters()), lr=args.learning_rate)
+            self.actor_optimizer = optim.Adam(list(self.actor.parameters()), lr=args.learning_rate)
+            if len(self.context_encoder_params) > 0:
+                self.context_optimizer = optim.Adam(self.context_encoder_params, lr=args.learning_rate)
+            else:
+                self.context_optimizer = None
 
-    def train(self, data, global_step):
+    def learn(self, data, global_step):
         with torch.no_grad():
             clipped_noise = (torch.randn_like(data.actions, device=self.device) * self.args.policy_noise).clamp(
                 -self.args.noise_clip, self.args.noise_clip
