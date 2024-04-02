@@ -89,7 +89,9 @@ if __name__ == "__main__":
 
     agent = TD3(envs, args, device)
 
-    envs.single_observation_space.dtype = np.float32
+    for key in envs.single_observation_space:
+        envs.single_observation_space[key].dtype = envs.observation_space[key].dtype = np.float32
+    envs.single_action_space.dtype = envs.action_space.dtype = np.dtype('float32')
     rb = DictReplayBuffer(
         args.buffer_size,
         envs.single_observation_space,
