@@ -12,4 +12,4 @@ OMP_NUM_THREADS=1 PYTHONPATH=. python src/test_td3.py \
     --len_history 5 \
     --context_objective osi \
     --checkpoint_dir "runs/training/seed_"$training_seed"/"$env_id"/"$train_env_config_id"/osi" \
-    --exp_name osi
+    --exp_name $train_env_config_id"/osi"
