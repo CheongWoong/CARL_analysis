@@ -63,24 +63,13 @@ if __name__ == "__main__":
         if env_config is None:
             assert args.env_config_id == "default" and args.n_contexts == 0
             context_configs = None
-        elif "test" not in args.env_config_id:
+        else:
             context_configs = []
             for name, value in env_config.items():
                 context_config = {}
                 context_config["context_space_type"] = value.pop("context_space_type")
                 context_config["context_arguments"] = dict({"name": name}, **value)
                 context_configs.append(context_config)
-        else:
-            assert args.test_single_context_id >= 0 and args.n_contexts == 1
-            context_configs = []
-            single_context_lists = []
-            for name, values in env_config.items():
-                single_context_list = []
-                for value in values:
-                    single_context_list.append({"context_space_type": "categorical", "context_arguments": {"name": name, "choices": [value]}})
-                single_context_lists.append(single_context_list)
-            all_possible_single_contexts = list(itertools.product(*single_context_lists))
-            context_configs = all_possible_single_contexts[args.test_single_context_id]
 
         envs = gym.vector.SyncVectorEnv([make_carl_env(args.env_id, args.seed, 0, args.capture_video, run_name, context_configs, args.n_contexts, args.len_history)])
     else:

@@ -55,8 +55,6 @@ class Args:
     """the id for context config (default, train, test)"""
     n_contexts: int = 0
     """the number of contexts to be sampled"""
-    test_single_context_id: int = -1
-    """the id for choosing a single context for test (not used when set to -1)"""
     len_history: int = 0
     """the length of history for context encoder input"""
     context_objective: str = "none"
@@ -101,8 +99,6 @@ class TestArgs:
     """the id for context config (default, train, test)"""
     n_contexts: int = 0
     """the number of contexts to be sampled"""
-    test_single_context_id: int = -1
-    """the id for choosing a single context for test (not used when set to -1)"""
     len_history: int = 0
     """the length of history for context encoder input"""
     context_objective: str = "none"

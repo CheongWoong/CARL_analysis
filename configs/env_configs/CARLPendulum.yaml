@@ -11,10 +11,34 @@ train:
     context_space_type: categorical
     choices: [0.7, 0.9, 1.1, 1.3]
 
-test:
-  l: [0.5, 1.5]
-  m: [0.5, 1.5]
+test_1:
+  l:
+    context_space_type: categorical
+    choices: [0.5]
+  m:
+    context_space_type: categorical
+    choices: [0.5]
 
-# test:
-#   l: [0.3, 1.7]
-#   m: [0.3, 1.7]
+test_2:
+  l:
+    context_space_type: categorical
+    choices: [0.5]
+  m:
+    context_space_type: categorical
+    choices: [1.5]
+
+test_3:
+  l:
+    context_space_type: categorical
+    choices: [1.5]
+  m:
+    context_space_type: categorical
+    choices: [0.5]
+
+test_4:
+  l:
+    context_space_type: categorical
+    choices: [1.5]
+  m:
+    context_space_type: categorical
+    choices: [1.5]
