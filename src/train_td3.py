@@ -61,7 +61,7 @@ if __name__ == "__main__":
             vars(args).update(override_args)
         env_config = env_config.get(args.env_config_id, None)
         if env_config is None:
-            assert args.env_config_id == "default" and args.n_contexts == 0
+            assert args.env_config_id == "default"
             context_configs = None
         else:
             context_configs = []

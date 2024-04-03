@@ -29,7 +29,7 @@ def make_env(env_id, seed, idx, capture_video, run_name):
 def make_carl_env(env_id, seed, idx, capture_video, run_name, context_configs, n_contexts, len_history):
     def thunk():
         contexts, obs_context_features = None, None
-        if n_contexts > 0:
+        if context_configs is not None and n_contexts > 0:
             context_distributions = []
             obs_context_features = []
             for context_config in context_configs:
