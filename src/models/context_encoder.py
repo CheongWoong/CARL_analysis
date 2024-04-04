@@ -46,14 +46,10 @@ class ContextEncoder(nn.Module):
     def forward(self, obs, action, next_obs, context=None, history=None):
         context_hidden = self.get_context(history)
 
-        # Assume 'embeddings' is your tensor of embedding vectors
-        embedding_norm = torch.norm(context_hidden, p=2)
-
-        # Scale the norm by the regularization strength, 'lambda_reg'
+        # context regularization
         lambda_reg = 0.01
+        embedding_norm = torch.norm(context_hidden, p=2)
         regularization_loss = lambda_reg * embedding_norm ** 2
-
-        print(torch.norm(obs), torch.norm(action), torch.norm(history), torch.norm(context_hidden))
 
         if self.context_objective == "osi":
             prediction = self.task_head(context_hidden)

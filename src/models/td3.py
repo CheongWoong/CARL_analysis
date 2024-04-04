@@ -102,7 +102,7 @@ class TD3(nn.Module):
             self.q_optimizer = optim.Adam(list(self.qf1.parameters()) + list(self.qf2.parameters()), lr=args.learning_rate)
             self.actor_optimizer = optim.Adam(list(self.actor.parameters()), lr=args.learning_rate)
             if len(self.context_encoder_params) > 0:
-                self.context_optimizer = optim.Adam(self.context_encoder_params, lr=args.learning_rate, weight_decay=0.1)
+                self.context_optimizer = optim.Adam(self.context_encoder_params, lr=args.learning_rate)
             else:
                 self.context_optimizer = None
 
