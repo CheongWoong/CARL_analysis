@@ -87,7 +87,7 @@ class TestArgs:
     # Algorithm specific arguments
     env_id: str = "CARLPendulum"
     """the id of the environment"""
-    total_episodes: int = 100
+    total_episodes: int = 10
     """the number of episodes for evaluation"""
 
     # Additional arguments

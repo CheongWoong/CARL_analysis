@@ -2,3 +2,461 @@ override_args:
   total_timesteps: 500000
   buffer_size: 500000
   learning_starts: 25000
+
+
+train:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3, 0.5, 0.7, 1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [5, 7, 10, 13, 15]
+
+train_wide:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1, 0.3, 0.5, 0.7, 1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [3, 5, 7, 10, 13, 15, 17]
+
+
+test:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05, 0.1, 0.3, 0.5, 0.7, 1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [1, 3, 5, 7, 10, 13, 15, 17, 19]
+
+test_1:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [1]
+
+test_2:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [3]
+
+test_3:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [5]
+
+test_4:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [7]
+
+test_5:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [10]
+
+test_6:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [13]
+
+test_7:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [15]
+
+test_8:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [17]
+
+test_9:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.05]
+  gravity:
+    context_space_type: categorical
+    choices: [19]
+
+test_10:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [1]
+
+test_11:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [3]
+
+test_12:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [5]
+
+test_13:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [7]
+
+test_14:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [10]
+
+test_15:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [13]
+
+test_16:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [15]
+
+test_17:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [17]
+
+test_18:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.1]
+  gravity:
+    context_space_type: categorical
+    choices: [19]
+
+test_19:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [1]
+
+test_20:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [3]
+
+test_21:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [5]
+
+test_22:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [7]
+
+test_23:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [10]
+
+test_24:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [13]
+
+test_25:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [15]
+
+test_26:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [17]
+
+test_27:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.3]
+  gravity:
+    context_space_type: categorical
+    choices: [19]
+
+test_28:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [1]
+
+test_29:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [3]
+
+test_30:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [5]
+
+test_31:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [7]
+
+test_32:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [10]
+
+test_33:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [13]
+
+test_34:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [15]
+
+test_35:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [17]
+
+test_36:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.5]
+  gravity:
+    context_space_type: categorical
+    choices: [19]
+
+test_37:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [1]
+
+test_38:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [3]
+
+test_39:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [5]
+
+test_40:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [7]
+
+test_41:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [10]
+
+test_42:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [13]
+
+test_43:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [15]
+
+test_44:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [17]
+
+test_45:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [0.7]
+  gravity:
+    context_space_type: categorical
+    choices: [19]
+
+test_46:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [1]
+
+test_47:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [3]
+
+test_48:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [5]
+
+test_49:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [7]
+
+test_50:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [10]
+
+test_51:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [13]
+
+test_52:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [15]
+
+test_53:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [17]
+
+test_54:
+  friction_tangential:
+    context_space_type: categorical
+    choices: [1.0]
+  gravity:
+    context_space_type: categorical
+    choices: [19]
