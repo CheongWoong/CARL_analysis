@@ -109,7 +109,6 @@ if __name__ == "__main__":
 
         # ALGO LOGIC: put action logic here
         with torch.no_grad():
-            # actions = agent.actor(torch.Tensor(obs).to(device))
             obs_tensor = {k: torch.Tensor(v).to(device) for k, v in obs.items()}
             actions = agent.actor(**obs_tensor)
             actions = actions.cpu().numpy().clip(envs.single_action_space.low, envs.single_action_space.high)

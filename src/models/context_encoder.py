@@ -58,7 +58,7 @@ class ContextEncoder(nn.Module):
             prediction = self.task_head(torch.cat([context_hidden, obs, action], dim=1))
             loss = torch.sqrt(self.mse_loss(prediction, next_obs))
         else:
-            prediction, loss = None, 0.0
-        total_loss = loss + regularization_loss
+            prediction, loss = None, None
+        total_loss = loss
 
         return context_hidden, prediction, total_loss
