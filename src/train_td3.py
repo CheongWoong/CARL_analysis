@@ -107,7 +107,10 @@ if __name__ == "__main__":
             with torch.no_grad():
                 # actions = agent.actor(torch.Tensor(obs).to(device))
                 obs_tensor = {k: torch.Tensor(v).to(device) for k, v in obs.items()}
-                actions = agent.actor(**obs_tensor)
+                context_hidden = None if agent.context_encoder is None else agent.context_encoder.get_context(obs_tensor["history"])
+                gt_context_hidden = None if agent.gt_context_encoder is None else agent.gt_context_encoder(obs_tensor["context"])
+                actions = agent.actor(**obs_tensor, context_hidden=context_hidden, gt_context_hidden=gt_context_hidden)
+                # actions = agent.actor(**obs_tensor)
                 actions += torch.normal(0, agent.actor.action_scale * args.exploration_noise)
                 actions = actions.cpu().numpy().clip(envs.single_action_space.low, envs.single_action_space.high)
 

@@ -21,7 +21,7 @@ class ContextEncoder(nn.Module):
             nn.Linear(128, 64),
             nn.Tanh(),
             nn.Linear(64, args.context_hidden_dim),
-        )
+        )        
         
         if self.context_objective == "osi":
             self.task_head = nn.Sequential(
@@ -46,6 +46,15 @@ class ContextEncoder(nn.Module):
     def forward(self, obs, action, next_obs, context=None, history=None):
         context_hidden = self.get_context(history)
 
+        # Assume 'embeddings' is your tensor of embedding vectors
+        embedding_norm = torch.norm(context_hidden, p=2)
+
+        # Scale the norm by the regularization strength, 'lambda_reg'
+        lambda_reg = 0.01
+        regularization_loss = lambda_reg * embedding_norm ** 2
+
+        print(torch.norm(obs), torch.norm(action), torch.norm(history), torch.norm(context_hidden))
+
         if self.context_objective == "osi":
             prediction = self.task_head(context_hidden)
             loss = torch.sqrt(self.mse_loss(prediction, context))
@@ -53,6 +62,7 @@ class ContextEncoder(nn.Module):
             prediction = self.task_head(torch.cat([context_hidden, obs, action], dim=1))
             loss = torch.sqrt(self.mse_loss(prediction, next_obs))
         else:
-            prediction, loss = None, None
+            prediction, loss = None, 0.0
+        total_loss = loss + regularization_loss
 
-        return prediction, loss
+        return context_hidden, prediction, total_loss
