@@ -1,0 +1,220 @@
+override_args:
+  total_timesteps: 50000
+  buffer_size: 50000
+  learning_starts: 10000
+
+train:
+  l:
+    context_space_type: categorical
+    choices: [0.1, 0.5, 1.0, 1.5, 2.0]
+  m:
+    context_space_type: categorical
+    choices: [0.1, 0.5, 1.0, 1.5, 2.0]
+
+test:
+  l:
+    context_space_type: categorical
+    choices: [0.1, 0.5, 1.0, 1.5, 2.0]
+  m:
+    context_space_type: categorical
+    choices: [0.1, 0.5, 1.0, 1.5, 2.0]
+
+test_1:
+  l:
+    context_space_type: categorical
+    choices: [0.1]
+  m:
+    context_space_type: categorical
+    choices: [0.1]
+
+test_2:
+  l:
+    context_space_type: categorical
+    choices: [0.1]
+  m:
+    context_space_type: categorical
+    choices: [0.5]
+
+test_3:
+  l:
+    context_space_type: categorical
+    choices: [0.1]
+  m:
+    context_space_type: categorical
+    choices: [1.0]
+
+test_4:
+  l:
+    context_space_type: categorical
+    choices: [0.1]
+  m:
+    context_space_type: categorical
+    choices: [1.5]
+
+test_5:
+  l:
+    context_space_type: categorical
+    choices: [0.1]
+  m:
+    context_space_type: categorical
+    choices: [2.0]
+
+test_6:
+  l:
+    context_space_type: categorical
+    choices: [0.5]
+  m:
+    context_space_type: categorical
+    choices: [0.1]
+
+test_7:
+  l:
+    context_space_type: categorical
+    choices: [0.5]
+  m:
+    context_space_type: categorical
+    choices: [0.5]
+
+test_8:
+  l:
+    context_space_type: categorical
+    choices: [0.5]
+  m:
+    context_space_type: categorical
+    choices: [1.0]
+
+test_9:
+  l:
+    context_space_type: categorical
+    choices: [0.5]
+  m:
+    context_space_type: categorical
+    choices: [1.5]
+
+test_10:
+  l:
+    context_space_type: categorical
+    choices: [0.5]
+  m:
+    context_space_type: categorical
+    choices: [2.0]
+
+test_11:
+  l:
+    context_space_type: categorical
+    choices: [1.0]
+  m:
+    context_space_type: categorical
+    choices: [0.1]
+
+test_12:
+  l:
+    context_space_type: categorical
+    choices: [1.0]
+  m:
+    context_space_type: categorical
+    choices: [0.5]
+
+test_13:
+  l:
+    context_space_type: categorical
+    choices: [1.0]
+  m:
+    context_space_type: categorical
+    choices: [1.0]
+
+test_14:
+  l:
+    context_space_type: categorical
+    choices: [1.0]
+  m:
+    context_space_type: categorical
+    choices: [1.5]
+
+test_15:
+  l:
+    context_space_type: categorical
+    choices: [1.0]
+  m:
+    context_space_type: categorical
+    choices: [2.0]
+
+test_16:
+  l:
+    context_space_type: categorical
+    choices: [1.5]
+  m:
+    context_space_type: categorical
+    choices: [0.1]
+
+test_17:
+  l:
+    context_space_type: categorical
+    choices: [1.5]
+  m:
+    context_space_type: categorical
+    choices: [0.5]
+
+test_18:
+  l:
+    context_space_type: categorical
+    choices: [1.5]
+  m:
+    context_space_type: categorical
+    choices: [1.0]
+
+test_19:
+  l:
+    context_space_type: categorical
+    choices: [1.5]
+  m:
+    context_space_type: categorical
+    choices: [1.5]
+
+test_20:
+  l:
+    context_space_type: categorical
+    choices: [1.5]
+  m:
+    context_space_type: categorical
+    choices: [2.0]
+
+test_21:
+  l:
+    context_space_type: categorical
+    choices: [2.0]
+  m:
+    context_space_type: categorical
+    choices: [0.1]
+
+test_22:
+  l:
+    context_space_type: categorical
+    choices: [2.0]
+  m:
+    context_space_type: categorical
+    choices: [0.5]
+
+test_23:
+  l:
+    context_space_type: categorical
+    choices: [2.0]
+  m:
+    context_space_type: categorical
+    choices: [1.0]
+
+test_24:
+  l:
+    context_space_type: categorical
+    choices: [2.0]
+  m:
+    context_space_type: categorical
+    choices: [1.5]
+
+test_25:
+  l:
+    context_space_type: categorical
+    choices: [2.0]
+  m:
+    context_space_type: categorical
+    choices: [2.0]
